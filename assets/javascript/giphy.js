@@ -1,12 +1,15 @@
 $(document).ready(function(){
 
-
+//list of array from user input 
 var giphyarray=["cat","dog","horses"];
 var array;
+//on click on add-animal the button will be created with the user input name 
 $("#add-animal").on("click",function(){
     
     event.preventDefault();
     var animalx=$("#animal-input").val().trim();
+    //if user input the name it will check if the name is inside the list if it is
+    //it will not add to the list if it not there it will add
     if(animalx.length>1){
         
         if(giphyarray.indexOf(animalx)===-1){
@@ -25,7 +28,7 @@ $("#add-animal").on("click",function(){
     }
     renderbutton(giphyarray);
 });
-// renderbutton();
+// this function create an array of name of the buttons 
 function renderbutton(array){
     $(".giphybuttons").empty();
     console.log("giphy array"+ array.length);
@@ -46,26 +49,23 @@ displayMovieInfo();
 return(array);
 }
 displayMovieInfo();
+//this function will listen to the user button click and  output the images 
 function displayMovieInfo() {
 $(".user-inputbutton").on("click", function (){
 
 
    var animals=$(this).attr("data-name");
    console.log(animals);
-   //var animals=cat;
+   var queryURL = "https://www.omdbapi.com/?t=" + animals + "&y=&plot=short&apikey=trilogy";//new
    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
    animals + "&api_key=oKfTDtwlvPJgZqbkQ0nY29zqC4BFLT0b&limit=5";
-
-    //var queryURL="https://api.giphy.com/v1/gifs/search?q=" +
-        //animals + "&api_key=dc6zaTOxFJmzC&limit=10";
     $.ajax({
         url:  queryURL,
         method: "GET"
     }).then(function(response){
-        console.log(response);
-    
+        
     var results = response.data;
-        console.log("response + data "+results);
+    // $(".image-display").text(JSON.stringify(response));//new
           // Looping over every result item
           for (var j = 0; j < results.length; j++) {
 
@@ -75,9 +75,9 @@ $(".user-inputbutton").on("click", function (){
             animalDiv.css({"float":"left"});
             // Creating a paragraph tag with the result item's rating
             var p1 = $("<p>").html("Rating: " + results[j].rating+"<br>"+"Title: "+ results[j].title);
-            // var p2 = $("<p>").text("Title: " + results[j].title);
+            // creating css for div
             pdiv.css({"background-color":"violet","width":"200px","height":"80px"});
-            // p2.css({"background-color":"violet"});
+           
             // Creating and storing an image tag
             var animalImage = $("<img>");
              animalImage.addClass("giphy");
@@ -90,7 +90,6 @@ $(".user-inputbutton").on("click", function (){
           animalDiv.css({"padding":"20px"})
             // Appending the paragraph and image tag to the animalDiv
             pdiv.append(p1);
-            // pdiv.append(p2);
             animalDiv.append(pdiv);
             animalDiv.append(animalImage);
 
@@ -99,6 +98,7 @@ $(".user-inputbutton").on("click", function (){
             
             
           }
+          //on click on giphy the image will stop or animate
           $(".giphy").on("click",function(){
             var state=$(this).attr("data-state");
             console.log("state  "+state);
@@ -117,7 +117,5 @@ $(".user-inputbutton").on("click", function (){
 });
 }
 
-
-  //$(document).on("click", ".user-inputbutton", displayMovieInfo);
 renderbutton(giphyarray);
 });

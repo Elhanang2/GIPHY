@@ -1,10 +1,5 @@
 .container{
     background-color: rgb(250, 242, 234);
-    /* position: relative; */
-    /* width:100%;  */
-    /* background-color:rgb(84, 122, 228); */
-    /* margin: auto; */
-    /* overflow: hidden; */
 }
 .giphybuttons{
     
@@ -20,21 +15,16 @@ p{
 }
 footer{
     background-color: grey;
-    /* width:100%; */
-    /* clear: both; */
     margin-right: -15px;
     margin-left: -15px;
     height: 50px;
     padding-top: 10px;
     text-align: center;
-    /* position: relative; */
 }
 
 .image-display{
-    /* clear: both; */
     width:70%;
     float: right;
-
 }
 .rededent-button{
     float:right;
@@ -56,6 +46,7 @@ footer{
 for{
     color:red;
 }
+/* Large devices (desktops, 980px and up)*/
 @media only screen and   (max-width: 980px){
     .image-display{
         width:70%;
@@ -66,7 +57,7 @@ for{
     } 
   }
   
-    /* Large devices (desktops, 980px and up)*/
+   /* Medium devices (tablets, 768px and up)*/
     @media  only screen and   (max-width: 768px) {
         .image-display{    
             width:100%;
@@ -80,7 +71,7 @@ for{
     
         
      
-     /* Medium devices (tablets, 768px and up)*/
+     /* Small devices (mobile, 640px and up)*/
   @media only screen and  (max-width: 640px)  {
     .image-display{ 
         width:100%;
