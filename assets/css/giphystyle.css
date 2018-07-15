@@ -1,0 +1,97 @@
+.container{
+    background-color: rgb(250, 242, 234);
+    /* position: relative; */
+    /* width:100%;  */
+    /* background-color:rgb(84, 122, 228); */
+    /* margin: auto; */
+    /* overflow: hidden; */
+}
+.giphybuttons{
+    
+   background-color:rgb(151, 192, 226);
+    padding:20px;
+}
+.giphy-form {
+    float: right; 
+    width:25%;   
+}
+p{
+    margin: 0;
+}
+footer{
+    background-color: grey;
+    /* width:100%; */
+    /* clear: both; */
+    margin-right: -15px;
+    margin-left: -15px;
+    height: 50px;
+    padding-top: 10px;
+    text-align: center;
+    /* position: relative; */
+}
+
+.image-display{
+    /* clear: both; */
+    width:70%;
+    float: right;
+
+}
+.rededent-button{
+    float:right;
+    text-align: center;
+}
+#add-animal{
+    
+    clear: both;
+    background-color: rgb(84, 122, 228);
+    border: solid rgb(84, 122, 228) ;
+    border-radius:5px;
+    
+}
+#animal-input{
+    border-radius:5px;
+    margin-top:5px;
+    margin-bottom:5px;
+}
+for{
+    color:red;
+}
+@media only screen and   (max-width: 980px){
+    .image-display{
+        width:70%;
+    }
+    .giphy-form {
+        
+        width:25%;   
+    } 
+  }
+  
+    /* Large devices (desktops, 980px and up)*/
+    @media  only screen and   (max-width: 768px) {
+        .image-display{    
+            width:100%;
+        } 
+        .giphy-form {
+            
+            width:100%;   
+        } 
+      
+    }
+    
+        
+     
+     /* Medium devices (tablets, 768px and up)*/
+  @media only screen and  (max-width: 640px)  {
+    .image-display{ 
+        width:100%;
+    }
+    .giphy-form {
+        
+        width:100%;   
+    }
+    lable{
+        width:100%;
+    }
+    
+  }
+    
